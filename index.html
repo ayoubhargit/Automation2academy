@@ -38,7 +38,10 @@ header {
     color: white;
     text-align: center;
     padding: 60px 20px;
-}
+} 
+
+
+
 
 header h1 {
     margin: 0;
@@ -160,15 +163,17 @@ footer {
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-    .training-card {
+@media (max-width:768px){
+    nav {
         flex-direction: column;
+        align-items: flex-start;
     }
 
-    .training-card img {
-        width: 100%;
+    nav div:nth-child(2) {
+        margin-top: 10px;
     }
 }
+
 </style>
 </head>
 
@@ -180,9 +185,14 @@ footer {
     <a href="#contact">Contact</a>
     <a href="#registration">Registration</a>
 </nav>
-
+	
 <header>
-    <h1>Automation Training Academy</h1>
+    <div style="text-align:center;">
+        <img src="images/logo.png" 
+             alt="Automation Academy Logo" 
+             style="max-width:300px; height:center; margin-bottom:40px;">
+    </div>
+    <h1>Automation 2 Academy<h1>
     <p>Professional PLC, Robotics & Industry 4.0 Training</p>
 </header>
 
