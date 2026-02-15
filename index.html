@@ -10,164 +10,287 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    background: #f4f4f9;
+    background: #f4f6fa;
+    color: #333;
 }
 
+/* NAVIGATION */
 nav {
     background: #0d6efd;
     padding: 15px;
     text-align: center;
 }
 
-nav a, nav button {
+nav a {
     color: white;
-    background: none;
-    border: none;
-    margin: 0 15px;
+    text-decoration: none;
+    margin: 0 20px;
     font-weight: bold;
-    cursor: pointer;
-    font-size: 15px;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HEADER */
 header {
-    background: #0d6efd;
+    background: linear-gradient(135deg, #0d6efd, #084298);
     color: white;
     text-align: center;
     padding: 60px 20px;
 }
 
-section {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 25px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+header h1 {
+    margin: 0;
+    font-size: 36px;
 }
 
-h2 {
+/* SECTIONS */
+section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+section h2 {
     text-align: center;
     color: #0d6efd;
+    margin-bottom: 30px;
+}
+
+/* TRAINING SECTION */
+.training-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .training-card {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.training-card img {
+    width: 350px;
+    object-fit: cover;
+}
+
+.training-content {
+    flex: 1;
+    padding: 25px;
+}
+
+.training-content h3 {
+    margin-top: 0;
+    color: #084298;
+}
+
+.training-content ul {
+    padding-left: 20px;
 }
 
 .price {
-    color: green;
+    margin-top: 15px;
+    font-size: 18px;
     font-weight: bold;
+    color: green;
+}
+
+/* CONTACT */
+.contact-info {
+    text-align: center;
+    font-size: 18px;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+button {
+    padding: 15px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #084298;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #eee;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .training-card {
+        flex-direction: column;
+    }
+
+    .training-card img {
+        width: 100%;
+    }
 }
 </style>
-
-<script>
-const translations = {
-    en: {
-        aboutTitle: "About Us",
-        aboutText: "We provide practical automation training focused on real industrial skills.",
-        trainingTitle: "Available Training",
-        contactTitle: "Contact",
-        registerTitle: "Register Now",
-        plcTitle: "PLC Programming",
-        plcPrice: "Price: 2500 MAD",
-        robotTitle: "Industrial Robotics",
-        robotPrice: "Price: 3000 MAD",
-        i4Title: "Industry 4.0",
-        i4Price: "Price: 2800 MAD"
-    },
-    fr: {
-        aboutTitle: "À Propos",
-        aboutText: "Nous proposons des formations pratiques en automatisme orientées vers l'industrie réelle.",
-        trainingTitle: "Formations Disponibles",
-        contactTitle: "Contact",
-        registerTitle: "Inscription",
-        plcTitle: "Programmation PLC",
-        plcPrice: "Prix : 2500 MAD",
-        robotTitle: "Robotique Industrielle",
-        robotPrice: "Prix : 3000 MAD",
-        i4Title: "Industrie 4.0",
-        i4Price: "Prix : 2800 MAD"
-    }
-};
-
-function changeLanguage(lang) {
-    document.getElementById("aboutTitle").innerText = translations[lang].aboutTitle;
-    document.getElementById("aboutText").innerText = translations[lang].aboutText;
-    document.getElementById("trainingTitle").innerText = translations[lang].trainingTitle;
-    document.getElementById("contactTitle").innerText = translations[lang].contactTitle;
-    document.getElementById("registerTitle").innerText = translations[lang].registerTitle;
-    document.getElementById("plcTitle").innerText = translations[lang].plcTitle;
-    document.getElementById("plcPrice").innerText = translations[lang].plcPrice;
-    document.getElementById("robotTitle").innerText = translations[lang].robotTitle;
-    document.getElementById("robotPrice").innerText = translations[lang].robotPrice;
-    document.getElementById("i4Title").innerText = translations[lang].i4Title;
-    document.getElementById("i4Price").innerText = translations[lang].i4Price;
-}
-</script>
-
 </head>
+
 <body>
 
 <nav>
     <a href="#about">About</a>
-    <a href="#training">Training</a>
+    <a href="#training">Available Training</a>
     <a href="#contact">Contact</a>
     <a href="#registration">Registration</a>
-
-    | 🌍 
-    <button onclick="changeLanguage('en')">EN</button>
-    <button onclick="changeLanguage('fr')">FR</button>
 </nav>
 
 <header>
     <h1>Automation Training Academy</h1>
+    <p>Professional PLC, Robotics & Industry 4.0 Training</p>
 </header>
 
 <section id="about">
-    <h2 id="aboutTitle">About Us</h2>
-    <p id="aboutText">We provide practical automation training focused on real industrial skills.</p>
+    <h2>About Us</h2>
+    <p>
+        Automation Training Academy provides high-quality industrial training in PLC programming,
+        robotics, and smart manufacturing systems. Our mission is to prepare students,
+        technicians and engineers with practical skills used in real factories.
+    </p>
 </section>
 
 <section id="training">
-    <h2 id="trainingTitle">Available Training</h2>
+    <h2>Available Training</h2>
 
-    <div class="training-card">
-        <h3 id="plcTitle">PLC Programming</h3>
-        <p>Level: Beginner to Intermediate</p>
-        <p id="plcPrice" class="price">Price: 2500 MAD</p>
+    <div class="training-container">
+
+        <!-- PLC TRAINING -->
+        <div class="training-card">
+            <img src="images/plc.jpg" alt="PLC Programming">
+            <div class="training-content">
+                <h3>PLC Programming Mastery</h3>
+                <p><strong>Level:</strong> Beginner → Intermediate</p>
+                <p><strong>Duration:</strong> 6 Weeks (36 Hours)</p>
+
+                <h4>Modules:</h4>
+                <ul>
+                    <li>Introduction to Automation</li>
+                    <li>PLC Hardware Architecture</li>
+                    <li>Ladder Logic Programming</li>
+                    <li>Timers & Counters</li>
+                    <li>Analog Inputs & Outputs</li>
+                    <li>Motor Control Circuits</li>
+                    <li>HMI Integration</li>
+                    <li>Industrial Safety Basics</li>
+                    <li>Final Practical Project</li>
+                </ul>
+
+                <p class="price">Price: 2500 MAD</p>
+            </div>
+        </div>
+
+        <!-- ROBOTICS TRAINING -->
+        <div class="training-card">
+            <img src="images/robotics.jpg" alt="Industrial Robotics">
+            <div class="training-content">
+                <h3>Industrial Robotics</h3>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Duration:</strong> 5 Weeks (30 Hours)</p>
+
+                <h4>Modules:</h4>
+                <ul>
+                    <li>Robot Types & Applications</li>
+                    <li>Robot Safety & Risk Assessment</li>
+                    <li>Robot Programming Basics</li>
+                    <li>Coordinate Systems</li>
+                    <li>Simulation & Offline Programming</li>
+                    <li>Pick & Place Applications</li>
+                    <li>Integration with PLC</li>
+                </ul>
+
+                <p class="price">Price: 3000 MAD</p>
+            </div>
+        </div>
+
+        <!-- INDUSTRY 4.0 TRAINING -->
+        <div class="training-card">
+            <img src="images/industry4.jpg" alt="Industry 4.0">
+            <div class="training-content">
+                <h3>Industry 4.0 & Smart Manufacturing</h3>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Duration:</strong> 4 Weeks (24 Hours)</p>
+
+                <h4>Modules:</h4>
+                <ul>
+                    <li>Industrial Networking</li>
+                    <li>SCADA Systems</li>
+                    <li>IoT Concepts</li>
+                    <li>Data Monitoring</li>
+                    <li>Cloud Integration Basics</li>
+                    <li>Smart Factory Architecture</li>
+                </ul>
+
+                <p class="price">Price: 2800 MAD</p>
+            </div>
+        </div>
+
     </div>
-
-    <div class="training-card">
-        <h3 id="robotTitle">Industrial Robotics</h3>
-        <p>Level: Intermediate</p>
-        <p id="robotPrice" class="price">Price: 3000 MAD</p>
-    </div>
-
-    <div class="training-card">
-        <h3 id="i4Title">Industry 4.0</h3>
-        <p>Level: Advanced</p>
-        <p id="i4Price" class="price">Price: 2800 MAD</p>
-    </div>
-
 </section>
 
 <section id="contact">
-    <h2 id="contactTitle">Contact</h2>
-    <p>Email: info@automationacademy.com</p>
-    <p>Phone: +212 600 000 000</p>
+    <h2>Contact</h2>
+    <div class="contact-info">
+        <p>Email: info@automationacademy.com</p>
+        <p>Phone: +212 600 000 000</p>
+        <p>Location: Tangier, Morocco</p>
+    </div>
 </section>
 
 <section id="registration">
-    <h2 id="registerTitle">Register Now</h2>
+    <h2>Register Now</h2>
     <form action="PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE" method="POST">
         <input type="text" name="name" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Email" required>
-        <button type="submit">Submit</button>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+
+        <select name="module" required>
+            <option value="">Select Training</option>
+            <option value="PLC Programming">PLC Programming</option>
+            <option value="Industrial Robotics">Industrial Robotics</option>
+            <option value="Industry 4.0">Industry 4.0</option>
+        </select>
+
+        <textarea name="message" placeholder="Additional Message"></textarea>
+
+        <button type="submit">Submit Registration</button>
     </form>
 </section>
+
+<footer>
+    © 2026 Automation Training Academy. All rights reserved.
+</footer>
 
 </body>
 </html>
