@@ -77,9 +77,22 @@ section h2 {
     background: #ffffff;
 }
 
+/* Default image size */
 .training-card img {
-    width: 350px;
     object-fit: cover;
+}
+
+/* Image size options */
+.img-large {
+    width: 350px;
+}
+
+.img-medium {
+    width: 280px;
+}
+
+.img-small {
+    width: 200px;
 }
 
 .training-content {
@@ -103,10 +116,18 @@ section h2 {
     color: green;
 }
 
-/* Unavailable text */
 .unavailable {
     color: red;
     font-weight: bold;
+}
+
+.summary {
+    margin-top: 15px;
+    padding: 15px;
+    background: #eef3ff;
+    border-left: 4px solid #0d6efd;
+    border-radius: 6px;
+    font-size: 14px;
 }
 
 /* CONTACT */
@@ -157,7 +178,9 @@ footer {
         flex-direction: column;
     }
 
-    .training-card img {
+    .img-large,
+    .img-medium,
+    .img-small {
         width: 100%;
     }
 }
@@ -182,8 +205,7 @@ footer {
     <h2>About Us</h2>
     <p>
         Automation Training Academy provides high-quality industrial training in PLC programming,
-        robotics, and smart manufacturing systems. Our mission is to prepare students,
-        technicians and engineers with practical skills used in real factories.
+        robotics, and smart manufacturing systems.
     </p>
 </section>
 
@@ -194,7 +216,7 @@ footer {
 
         <!-- PLC Beginner -->
         <div class="training-card">
-            <img src="images/plc.jpg" alt="PLC Programming">
+            <img src="images/plc.jpg" class="img-large" alt="PLC Programming">
             <div class="training-content">
                 <h3>PLC Programming (Beginner → Intermediate)</h3>
                 <p><strong>Duration:</strong> 7 Weeks (26 Hours)</p>
@@ -218,7 +240,7 @@ footer {
 
         <!-- PLC Advanced -->
         <div class="training-card">
-            <img src="images/plc.jpg" alt="Advanced PLC Programming">
+            <img src="images/plc.jpg" class="img-large" alt="Advanced PLC Programming">
             <div class="training-content">
                 <h3>PLC Programming (Intermediate → Advanced)</h3>
                 <p><strong>Duration:</strong> 10 Weeks (40 Hours)</p>
@@ -228,30 +250,32 @@ footer {
                     <li>Siemens S7-300 / 1200 / 1500</li>
                     <li>Ladder & STL Programming</li>
                     <li>Profibus & Profinet Communication</li>
-                    <li>Vision Sensors (IV2, IFM) & Integration with PLC </li>
+                    <li>Vision Sensors Integration</li>
                     <li>Industrial Printers & ZPL Programming</li>
-                    <li>Communication between Zebra printer and PLC using Ethernet TCP/IP</li>
+                    <li>Ethernet TCP/IP Communication</li>
                     <li>Motor & Drive Communication</li>
-                    <li>PT100 & Programming of RTD Modules</li>
+                    <li>PT100 & RTD Modules</li>
                     <li>PID Programming Basics</li>
                     <li>Final Project & Certification</li>
-                    
-                    
                 </ul>
-    <p class="Summary"> Summary : After This cources you will be able to use Siemens PLC fluently with Industrial Comunication using Profinet and Porfibus, Keyence IV2, IFM, Zebra Printer, Motor Driver, PT100 and RTD Modules and PID</p>
+
+                <div class="summary">
+                    After this course, you will be able to use Siemens PLC confidently,
+                    integrate industrial communication (Profinet & Profibus),
+                    connect vision sensors, printers, motors, RTD modules and implement PID control.
+                </div>
 
                 <p class="price">Price: 1799 MAD</p>
             </div>
         </div>
 
-        <!-- Robotics (Unavailable) -->
+        <!-- Robotics (Smaller Image) -->
         <div class="training-card">
-            <img src="images/robotics.jpg" alt="Industrial Robotics">
+            <img src="images/robotics.jpg" class="img-small" alt="Industrial Robotics">
             <div class="training-content">
                 <h3>Industrial Robotics</h3>
                 <p><strong>Duration:</strong> 5 Weeks (20 Hours)</p>
 
-                <h4>Modules:</h4>
                 <ul>
                     <li>Robot Types & Applications</li>
                     <li>Robot Safety</li>
@@ -260,29 +284,7 @@ footer {
                     <li>Integration with PLC</li>
                 </ul>
 
-                <p class="unavailable">Temporarily Unavailable, Coming Soon</p>
-            </div>
-        </div>
-
-        <!-- Industry 4.0 (Unavailable) -->
-        <div class="training-card">
-            <img src="images/industry4.jpg" alt="Industry 4.0">
-            <div class="training-content">
-                <h3>Industry 4.0 & Smart Manufacturing</h3>
-                <p><strong>Duration:</strong> 5 Weeks (20 Hours)</p>
-
-                <h4>Modules:</h4>
-                <ul>
-                    <li>Smart Factory Architecture</li>
-                    <li>Industrial Networking</li>
-                    <li>SCADA Systems</li>
-                    <li>Raspberry & IoT</li>
-                    <li>OPC Server</li>
-                    <li>Data Monitoring</li>
-                    <li>Final Project</li>
-                </ul>
-
-                <p class="unavailable">Temporarily Unavailable, Coming Soon</p>
+                <p class="unavailable">Temporarily Unavailable — Coming Soon</p>
             </div>
         </div>
 
